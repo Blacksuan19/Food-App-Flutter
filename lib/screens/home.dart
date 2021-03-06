@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_ui/widgets/app_bar.dart';
-import 'package:food_app_ui/widgets/bottom_navbar.dart';
-import 'package:food_app_ui/widgets/category_row.dart';
+import 'package:food_app_ui/widgets/widgets.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -12,6 +10,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFAFFF7),
       appBar: makeAppBar(
         leadingIcon: Image(
           image: AssetImage(
@@ -19,53 +18,48 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      bottomNavigationBar: makeBottomNav(),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      bottomNavigationBar: NavBar(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            makeHeader(),
+            SizedBox(height: 20),
+            CategoryRow(),
+            SizedBox(height: 20),
+            Wrap(
               children: [
-                Text(
-                  "Food Delivery",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ItemCard(
+                  assetName: "pipes",
+                  name: "Pipes Burger",
+                  time: 10,
+                  firstColor: Colors.yellow[100],
+                  secondColor: Colors.yellow[200],
                 ),
-                SizedBox(height: 8),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "B-46 Bhgyoday society",
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(width: 5),
-                    Icon(Icons.keyboard_arrow_down)
-                  ],
+                ItemCard(
+                  assetName: "chicken",
+                  name: "Chicken Burger",
+                  time: 15,
+                  firstColor: Colors.red[100],
+                  secondColor: Colors.grey[100],
                 ),
-                SizedBox(height: 30),
-                TextField(
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 10, top: 10),
-                    hintText: "Search items here...",
-                    hintStyle: TextStyle(color: Colors.grey[400], fontSize: 12),
-                    border: InputBorder.none,
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        Icons.search,
-                        color: Colors.black,
-                      ),
-                      onPressed: () => {},
-                    ),
-                  ),
+                ItemCard(
+                  assetName: "beef",
+                  name: "Beef Burger",
+                  time: 15,
+                  firstColor: Colors.green[100],
+                  secondColor: Colors.grey[100],
+                ),
+                ItemCard(
+                  assetName: "dog",
+                  name: "Hot Dog",
+                  time: 15,
+                  firstColor: Colors.yellow[200],
+                  secondColor: Colors.red[100],
                 ),
               ],
-            ),
-          ),
-          SizedBox(height: 20),
-          CategoryRow()
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

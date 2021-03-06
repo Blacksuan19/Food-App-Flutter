@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 AppBar makeAppBar({leadingIcon}) {
   return AppBar(
+    foregroundColor: Color(0xFFFAFFF7),
     leading: Padding(
       padding: const EdgeInsets.only(left: 20, top: 10),
       child: IconButton(
