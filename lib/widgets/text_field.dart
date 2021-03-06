@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 TextField makeTextField() {
   return TextField(
+    textDirection: TextDirection.ltr,
     decoration: InputDecoration(
       fillColor: Colors.white70,
       filled: true,
