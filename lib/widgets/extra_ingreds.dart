@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_ui/widgets/widgets.dart';
 
 Container makeExtras({foodItem, context}) {
   final extras = ["tomato", "honey", "cheese", "small_dog"];
@@ -6,13 +7,10 @@ Container makeExtras({foodItem, context}) {
   return Container(
     width: MediaQuery.of(context).size.width,
     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.all(Radius.circular(10)),
-      gradient: LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [foodItem.firstColor, foodItem.secondColor],
-      ),
+    decoration: makeGradient(
+      firstColor: foodItem.firstColor,
+      secondColor: foodItem.secondColor,
+      radius: 20,
     ),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,

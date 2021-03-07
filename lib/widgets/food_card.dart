@@ -15,14 +15,11 @@ class FoodCard extends StatelessWidget {
       alignment: Alignment.topCenter,
       clipBehavior: Clip.hardEdge,
       padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(20)),
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [foodItem.firstColor, foodItem.secondColor],
+      decoration: makeGradient(
+        firstColor: foodItem.firstColor,
+        secondColor: foodItem.secondColor,
+        radius: 20,
         ),
-      ),
       child: Column(
         children: [
           Row(

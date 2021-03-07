@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:food_app_ui/models/models.dart';
 import 'package:food_app_ui/screens/screens.dart';
+import 'package:food_app_ui/widgets/widgets.dart';
 
 class ItemCard extends StatelessWidget {
   final Food foodItem;
@@ -28,13 +29,10 @@ class ItemCard extends StatelessWidget {
         width: 120,
         height: 150,
         padding: EdgeInsets.only(top: 20),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [foodItem.firstColor, foodItem.secondColor],
-          ),
+        decoration: makeGradient(
+          firstColor: foodItem.firstColor,
+          secondColor: foodItem.secondColor,
+          radius: 20,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
