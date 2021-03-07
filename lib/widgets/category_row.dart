@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CategoryRow extends StatelessWidget {
   Container makeCategory({assetName, isSelected = false}) {
@@ -30,9 +31,9 @@ class CategoryRow extends StatelessWidget {
           Text(
             // capitalize the first letter
             assetName[0].toUpperCase() + assetName.substring(1),
-            style: TextStyle(
+            style: GoogleFonts.rubik(
                 fontSize: 12,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w400,
                 color: Colors.grey[500]),
           )
         ],

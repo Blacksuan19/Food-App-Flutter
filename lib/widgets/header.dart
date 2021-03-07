@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/widgets/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 Padding makeHeader() {
   return Padding(
@@ -9,7 +10,7 @@ Padding makeHeader() {
       children: [
         Text(
           "Food Delivery",
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 8),
         Row(
@@ -17,7 +18,8 @@ Padding makeHeader() {
           children: [
             Text(
               "B-46 Bhgyoday society",
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+              style:
+                  GoogleFonts.rubik(fontSize: 14, fontWeight: FontWeight.w600),
             ),
             SizedBox(width: 5),
             Icon(Icons.keyboard_arrow_down)
