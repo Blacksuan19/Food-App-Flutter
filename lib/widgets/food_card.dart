@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/models/models.dart';
+import 'package:food_app_ui/widgets/widgets.dart';
 
 class FoodCard extends StatelessWidget {
   const FoodCard({
@@ -19,7 +20,7 @@ class FoodCard extends StatelessWidget {
         firstColor: foodItem.firstColor,
         secondColor: foodItem.secondColor,
         radius: 20,
-        ),
+      ),
       child: Column(
         children: [
           Row(
@@ -81,47 +82,12 @@ class FoodCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Container(
-            padding: EdgeInsets.only(left: 10, top: 5, bottom: 5),
-            decoration: BoxDecoration(
-              color: Colors.white38,
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  "Large x ",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(1),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
-                    ),
-                  ),
-                  child: Text(
-                    " 2 ",
-                    style: TextStyle(
-                        wordSpacing: 10,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  ),
-                ),
-                Icon(
-                  Icons.keyboard_arrow_down,
-                  size: 30,
-                )
-              ],
-            ),
-          )
+          ItemCount(
+            fontSize: 20,
+            horPadding: 15,
+            verPadding: 10,
+            iconSize: 30,
+          ),
         ],
       ),
     );

@@ -1,8 +1,13 @@
 export 'app_bar.dart';
 export 'bottom_navbar.dart';
 export 'category_row.dart';
+export 'checkout_navbar.dart';
 export 'extra_ingreds.dart';
 export 'food_card.dart';
+export 'food_checkout_card.dart';
+export 'gradient_button.dart';
 export 'header.dart';
 export 'item_card.dart';
+export 'item_count.dart';
+export 'make_gradient.dart';
 export 'text_field.dart';
