@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
-AppBar makeAppBar({leadingIcon}) {
+AppBar makeAppBar({leadingIcon, context, isBack = false}) {
   return AppBar(
     foregroundColor: Color(0xFFFAFFF7),
     leading: Padding(
       padding: const EdgeInsets.only(left: 20, top: 10),
       child: IconButton(
+        // hide annoying ripple effect
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        mouseCursor: SystemMouseCursors.click, // change mouse to pointer
+        hoverColor: Colors.transparent,
+        enableFeedback: false,
         icon: leadingIcon,
-        onPressed: () => {},
+        onPressed: () => isBack ? Navigator.pop(context) : {},
       ),
     ),
     actions: [
