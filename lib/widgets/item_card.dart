@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:food_app_ui/models/models.dart';
+
 class ItemCard extends StatelessWidget {
-  final String assetName;
-  final String name;
-  final int time;
-  final Color firstColor;
-  final Color secondColor;
+  final Food foodItem;
   const ItemCard({
     Key key,
-    this.assetName,
-    this.name,
-    this.time,
-    this.firstColor,
-    this.secondColor,
+    this.foodItem,
   }) : super(key: key);
 
   @override
@@ -28,7 +22,7 @@ class ItemCard extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [firstColor, secondColor],
+          colors: [foodItem.firstColor, foodItem.secondColor],
         ),
       ),
       child: Column(
@@ -36,7 +30,8 @@ class ItemCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image(
-            image: AssetImage("assets/images/burgers/$assetName.png"),
+            image:
+                AssetImage("assets/images/burgers/${foodItem.assetName}.png"),
             height: 100,
             fit: BoxFit.cover,
           ),
@@ -46,7 +41,7 @@ class ItemCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  name,
+                  foodItem.name,
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
@@ -61,7 +56,7 @@ class ItemCard extends StatelessWidget {
                     ),
                     SizedBox(width: 2),
                     Text(
-                      "$time Min",
+                      "${foodItem.time} Min",
                       style: TextStyle(
                           fontSize: 10,
                           color: Colors.red[300],

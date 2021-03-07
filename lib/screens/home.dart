@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_ui/models/food.dart';
 import 'package:food_app_ui/widgets/widgets.dart';
 
 class Home extends StatefulWidget {
@@ -28,33 +29,8 @@ class _HomeState extends State<Home> {
             SizedBox(height: 20),
             Wrap(
               children: [
-                ItemCard(
-                  assetName: "pipes",
-                  name: "Pipes Burger",
-                  time: 10,
-                  firstColor: Colors.yellow[100],
-                  secondColor: Colors.yellow[200],
-                ),
-                ItemCard(
-                  assetName: "chicken",
-                  name: "Chicken Burger",
-                  time: 15,
-                  firstColor: Colors.red[100],
-                  secondColor: Colors.grey[100],
-                ),
-                ItemCard(
-                  assetName: "beef",
-                  name: "Beef Burger",
-                  time: 15,
-                  firstColor: Colors.green[100],
-                  secondColor: Colors.grey[100],
-                ),
-                ItemCard(
-                  assetName: "dog",
-                  name: "Hot Dog",
-                  time: 15,
-                  firstColor: Colors.yellow[200],
-                  secondColor: Colors.red[100],
+                ...foods.map(
+                  (food) => ItemCard(foodItem: food),
                 ),
               ],
             )
