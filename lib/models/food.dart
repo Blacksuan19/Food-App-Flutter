@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Food {
   String name;
   String assetName;
+  String extras;
   int price;
   int time;
   Color firstColor;
@@ -12,6 +13,7 @@ class Food {
   Food({
     this.name,
     this.assetName,
+    this.extras,
     this.price,
     this.time,
     this.firstColor,
@@ -25,6 +27,7 @@ List<Food> foods = [
   Food(
     assetName: "pipes",
     name: "Pipes Burger",
+    extras: "Extra cheese, Tomatos",
     price: 15,
     time: 10,
     firstColor: Colors.yellow[100],
@@ -33,6 +36,7 @@ List<Food> foods = [
   Food(
     assetName: "chicken",
     name: "Chicken Burger",
+    extras: "Double cheese, Honey",
     price: 15,
     time: 15,
     firstColor: Colors.red[100],
@@ -43,6 +47,7 @@ List<Food> foods = [
   Food(
     assetName: "beef",
     name: "Beef Burger",
+    extras: "Grilled with Susage, Honey",
     price: 15,
     time: 15,
     firstColor: Colors.green[100],
@@ -51,6 +56,7 @@ List<Food> foods = [
   Food(
     assetName: "dog",
     name: "Hot dog",
+    extras: "Extra Cheese",
     price: 15,
     time: 15,
     firstColor: Colors.yellow[200],
