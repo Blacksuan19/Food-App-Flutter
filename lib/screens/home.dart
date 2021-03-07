@@ -28,6 +28,8 @@ class _HomeState extends State<Home> {
             CategoryRow(),
             SizedBox(height: 20),
             Wrap(
+              spacing: 20,
+              runSpacing: 20,
               children: [
                 ...foods.map(
                   (food) => ItemCard(foodItem: food),
