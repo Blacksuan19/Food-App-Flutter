@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
             "assets/images/menu-icon.png",
           ),
         ),
+        context: context,
       ),
       bottomNavigationBar: NavBar(),
       body: SingleChildScrollView(

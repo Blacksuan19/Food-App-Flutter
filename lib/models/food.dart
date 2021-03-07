@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class Food {
   String name;
   String assetName;
-  double price;
+  int price;
   int time;
   Color firstColor;
   Color secondColor;
+  int imageWidth;
+  int imageHeight;
   Food({
     this.name,
     this.assetName,
@@ -14,6 +16,8 @@ class Food {
     this.time,
     this.firstColor,
     this.secondColor,
+    this.imageWidth = 200,
+    this.imageHeight = 80,
   });
 }
 
@@ -33,6 +37,8 @@ List<Food> foods = [
     time: 15,
     firstColor: Colors.red[100],
     secondColor: Colors.grey[100],
+    imageHeight: 80,
+    imageWidth: 80,
   ),
   Food(
     assetName: "beef",
