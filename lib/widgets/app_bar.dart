@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 
 AppBar makeAppBar({leadingIcon, context, isBack = false}) {
   return AppBar(
-    foregroundColor: Color(0xFFFAFFF7),
+    backgroundColor: Color(0xFFFAFFF7),
     leading: Padding(
       padding: const EdgeInsets.only(left: 20, top: 10),
       child: IconButton(
@@ -27,7 +27,6 @@ AppBar makeAppBar({leadingIcon, context, isBack = false}) {
         ),
       )
     ],
-    backgroundColor: Colors.white,
     elevation: 0,
   );
 }
